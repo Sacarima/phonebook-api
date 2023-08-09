@@ -31,6 +31,11 @@ let persons = [
         "id": 5,
         "name": "Bruno king",
         "number": "90232-232-4545"
+    },
+    {
+        "id": 5,
+        "name": "larry wheels",
+        "number": "231-232-4545"
     }
 ];
 
