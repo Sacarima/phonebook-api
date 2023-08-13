@@ -33,7 +33,7 @@ let persons = [
         "number": "90232-232-4545"
     },
     {
-        "id": 5,
+        "id": 6,
         "name": "larry wheels",
         "number": "231-232-111"
     },
@@ -47,6 +47,14 @@ let persons = [
 app.get('/api/persons', (req, res) => {
     res.json(persons)
 })
+
+app.get('/info', (req, res) => {
+    const currentDate = new Date()
+    res.send(`<h2>Phonebook has info for 
+    ${persons.length} people</h2> 
+    <h2>${currentDate}</h2>`)
+    console.log('loading')
+} )
 
 app.listen(PORT, () => {
     console.log(`the server is running on port ${PORT}`)
