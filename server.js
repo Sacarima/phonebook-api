@@ -1,8 +1,17 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
 const PORT = 4001;
 
-app.use(express.json())
+app.use(express.json());
+app.use(morgan('tiny'));
+
+morgan.token('object', (req, res) => {
+    return `${JSON.stringify(req.body)}`
+})
+
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :object'));
+
 
 let persons = [
     {
@@ -47,8 +56,8 @@ let persons = [
 ];
 
 app.get('/api/persons', (req, res) => {
-    res.json(persons)
-})
+    res.json(persons);
+});
 
 app.get('/info', (req, res) => {
     const currentDate = new Date()
