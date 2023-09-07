@@ -108,37 +108,6 @@ app.post('/api/persons', (req, res) => {
     res.json(entry)
 })
 
-// Generate a random ID within a specific range
-// function generateRandomId() {
-//     const min = 1000; // Minimum ID value
-//     const max = 9999; // Maximum ID value
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-
-// app.post('/api/persons', (req, res) => {
-//     const body = req.body;
-
-//     // Check if name or number is missing
-//     if (!body.name || !body.number) {
-//         return res.status(400).json({ error: 'Name or number is missing' });
-//     }
-
-//     // Check if the name already exists in the phonebook
-//     if (persons.some(entry => entry.name === body.name)) {
-//         return res.status(400).json({ error: 'Name already exists in the phonebook' });
-//     }
-
-//     const newPerson = {
-//         id: generateRandomId(), // Generate a new ID
-//         name: body.name,
-//         number: body.number
-//     };
-
-//     persons.push(newPerson);
-//     res.json(newPerson);
-// });
-
-
 app.listen(PORT, () => {
     console.log(`the server is running on port ${PORT}`)
 })
